@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class Player : TimeControlled
 {
-    public float moveSpeed = 5;
     public float jumpVelocity = 10;
     public GameObject bullet;
     //public TimeController timeController;
-
     private Vector2 pos;
     [SerializeField] bool isBulletExisting = false;
     void Start()
@@ -17,44 +15,13 @@ public class Player : TimeControlled
 
     }
 
-
-
     public override void TimeUpdate()
     {
-        pos = transform.position;
-
-        pos.y += velocity.y * Time.deltaTime;
-        velocity.y += TimeController.gravity * Time.deltaTime;
-
-        if (pos.y < 1)
-        {
-            pos.y = 1;
-            velocity.y = 0;
-        }
-
         BasicMove();
-
-
-        transform.position = pos;
     }
 
     private void BasicMove()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            velocity.y = jumpVelocity;
-        }
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            pos.x += moveSpeed * Time.deltaTime;
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            pos.x -= moveSpeed * Time.deltaTime;
-        }
-
         if (Input.GetMouseButtonDown(0))
         {
             if (!isBulletExisting)

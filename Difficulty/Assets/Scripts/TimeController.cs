@@ -43,7 +43,8 @@ public class TimeController : MonoBehaviour
         UpdateTimeObjects();
 
 
-        bool stepBack = Input.GetKey(KeyCode.A);
+        bool stepBack = Input.GetKey(KeyCode.Space);
+        Debug.Log(stepBack);
 
         if (stepBack)
         {
