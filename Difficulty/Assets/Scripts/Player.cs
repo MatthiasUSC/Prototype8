@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class Player : TimeControlled
 {
-    public float jumpVelocity = 10;
     public GameObject bullet;
     //public TimeController timeController;
-    private Vector2 pos;
     [SerializeField] bool isBulletExisting = false;
     void Start()
     {
