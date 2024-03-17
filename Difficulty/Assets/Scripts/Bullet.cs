@@ -16,7 +16,7 @@ public class Bullet : TimeControlled
     private void Update()
     {
 
-        bool isReversing = Input.GetKey(KeyCode.A);
+        bool isReversing = Input.GetKey(KeyCode.Space);
         if (isReversing)
         {
             
