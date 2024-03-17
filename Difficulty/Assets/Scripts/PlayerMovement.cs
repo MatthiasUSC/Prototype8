@@ -88,6 +88,8 @@ public class PlayerController : MonoBehaviour
             if(hasKey){
                 // End game?
                 Debug.Log("Won");
+                int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
+                SceneManager.LoadScene(nextIndex);
             }
         }
     }
