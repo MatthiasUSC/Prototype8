@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     
     public float jumpVelocity = 10;
 
+    public bool hasKey = false;
+
     void Start()
     {
         
@@ -72,6 +74,20 @@ public class PlayerController : MonoBehaviour
 
             if(Mathf.Abs(horizontalVel) < dragThreshold){
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+            }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col){
+        if(col.tag == "Key"){
+            Destroy(col.gameObject);
+            hasKey = true;
+        }
+
+        if(col.tag == "Door"){
+            if(hasKey){
+                // End game?
+                Debug.Log("Won");
             }
         }
     }

@@ -44,7 +44,6 @@ public class TimeController : MonoBehaviour
 
 
         bool stepBack = Input.GetKey(KeyCode.Space);
-        Debug.Log(stepBack);
 
         if (stepBack)
         {
