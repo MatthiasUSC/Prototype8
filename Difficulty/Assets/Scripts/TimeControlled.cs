@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Search;
+//using UnityEditor.Search;
 using UnityEngine;
 using static TimeController;
 
@@ -25,10 +25,11 @@ public class TimeControlled : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+ /*   private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "TimeSphere")
         {
+            Debug.Log("inthezone");
             isInTheCircle = true;
         }
     }
@@ -39,7 +40,7 @@ public class TimeControlled : MonoBehaviour
         {
             isInTheCircle = false;
         }
-    }
+    }*/
 
 
     private void Update()

@@ -50,7 +50,8 @@ MonoBehaviour:
   isInTheCircle: 0
   recordCount: 0
   recordIndex: 0
-  speed: 5
+  speed: 0
+  zone: {fileID: 4568746573231104230}
 --- !u!1 &4568746573231104230
 GameObject:
   m_ObjectHideFlags: 0

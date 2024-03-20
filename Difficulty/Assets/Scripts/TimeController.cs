@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimeController : MonoBehaviour
 {
-    public static float gravity = -100;
+    public static float gravity = -10;
     public struct RecordedData
     {
         public Vector2 pos;
@@ -42,11 +42,11 @@ public class TimeController : MonoBehaviour
     {
         UpdateTimeObjects();
 
-
-        bool stepBack = Input.GetKey(KeyCode.Space);
+/*
+        bool stepBack = Input.GetKey(KeyCode.A);
 
         if (stepBack)
-        {
+        {*/
             for (int objectIndex = 0; objectIndex < timeObjects.Length; objectIndex++)
             {
                 TimeControlled timeObject = timeObjects[objectIndex];
@@ -56,22 +56,25 @@ public class TimeController : MonoBehaviour
                 }
                 else {
                     timeObject.TimeUpdate();
-                }
+                
+                timeObject.recordCount = timeObject.recordIndex;
+                timeObject.RecordState();
             }
-        }
+            }
+      /*  }
 
         else
-        {
-            for (int objectIndex = 0; objectIndex < timeObjects.Length; objectIndex++)
+        {*/
+         /*   for (int objectIndex = 0; objectIndex < timeObjects.Length; objectIndex++)
             {
                 TimeControlled timeObject = timeObjects[objectIndex];
                 timeObject.TimeUpdate();
                 timeObject.recordCount = timeObject.recordIndex;
                 timeObject.RecordState();
-            }
+            }*/
 
             
-        }
+        //}
 
 
 

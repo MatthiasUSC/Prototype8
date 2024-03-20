@@ -26,14 +26,12 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update(){
-        if(Input.GetKey(jump) && isGrounded){
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpVelocity);
-        }
+       
     }
 
     void FixedUpdate()
     {
-        // Ground check
+  /*      // Ground check
         isGrounded = false;
         RaycastHit2D hit1 = Physics2D.Raycast(groundCheck1.transform.position, Vector3.down, 0.1f);
         if(hit1.collider != null){
@@ -46,10 +44,10 @@ public class PlayerController : MonoBehaviour
             if(hit2.collider.transform.tag == "Ground"){
                 isGrounded = true;
             }
-        }
+        }*/
 
         // Physics Controls
-        float horizontalVel = GetComponent<Rigidbody2D>().velocity.x;
+ /*       float horizontalVel = GetComponent<Rigidbody2D>().velocity.x;
         float horizontalForce = horizontalAccel * GetComponent<Rigidbody2D>().mass;
         if(Input.GetKey(left)){
             if(horizontalVel >= -maxHorizontalSpeed){
@@ -75,22 +73,8 @@ public class PlayerController : MonoBehaviour
             if(Mathf.Abs(horizontalVel) < dragThreshold){
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
             }
-        }
+        }*/
     }
 
-    void OnTriggerEnter2D(Collider2D col){
-        if(col.tag == "Key"){
-            Destroy(col.gameObject);
-            hasKey = true;
-        }
 
-        if(col.tag == "Door"){
-            if(hasKey){
-                // End game?
-                Debug.Log("Won");
-                int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
-                SceneManager.LoadScene(nextIndex);
-            }
-        }
-    }
 }
